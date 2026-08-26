@@ -1,0 +1,4 @@
+# The app is a JavaScript project; the stylesheet is larger than the source in
+# bytes, which makes linguist label the whole repository as CSS.
+*.css linguist-detectable=false
+fonts/* linguist-vendored
