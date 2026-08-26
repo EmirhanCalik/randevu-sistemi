@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Randevu Sistemi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-section">
+      <img src="logo.png" alt="Randevu Sistemi" class="logo-icon">
+      <div>
+        <h1>Randevu Sistemi</h1>
+        <p class="subtitle">Randevu Yönetim Sistemi</p>
+      </div>
+    </div>
+    <button class="theme-toggle-btn" id="themeToggle" title="Tema Değiştir">
+      <span class="theme-icon" id="themeIcon">🌙</span>
+    </button>
+  </header>
+
+  <!-- Day Navigation -->
+  <div class="day-nav">
+    <button class="day-nav-btn" id="prevDay">◀ Önceki Gün</button>
+    <div class="date-picker-wrapper">
+      <div class="current-date" id="currentDate">9 Mayıs 2026 - Cumartesi</div>
+      <button class="calendar-toggle-btn" id="calendarToggle" title="Takvim">📅</button>
+      <!-- Calendar Popup -->
+      <div class="calendar-popup" id="calendarPopup">
+        <div class="calendar-popup-header">
+          <button class="cal-nav-btn" id="prevMonth">◀</button>
+          <div class="cal-selectors">
+            <select class="cal-select" id="monthSelect"></select>
+            <select class="cal-select" id="yearSelect"></select>
+          </div>
+          <button class="cal-nav-btn" id="nextMonth">▶</button>
+        </div>
+        <div class="calendar-grid">
+          <div class="cal-day-name">Pzt</div>
+          <div class="cal-day-name">Sal</div>
+          <div class="cal-day-name">Çar</div>
+          <div class="cal-day-name">Per</div>
+          <div class="cal-day-name">Cum</div>
+          <div class="cal-day-name">Cmt</div>
+          <div class="cal-day-name">Paz</div>
+        </div>
+        <div class="calendar-days" id="calendarDays"></div>
+      </div>
+    </div>
+    <button class="day-nav-btn" id="nextDay">Sonraki Gün ▶</button>
+  </div>
+
+  <!-- Appointments Table -->
+  <div class="table-container">
+    <table class="appointments-table">
+      <thead>
+        <tr>
+          <th class="col-time">Saat</th>
+          <th class="col-name">Ad Soyad</th>
+          <th class="col-phone">Telefon No</th>
+          <th class="col-action">İşlem</th>
+        </tr>
+      </thead>
+      <tbody id="appointmentsBody">
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <button class="btn-clear-day" id="clearDay">🗑 Bugünün Randevularını Temizle</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "randevu-sistemi",
+  "version": "1.0.0",
+  "description": "Randevu Yönetim Sistemi - Electron tabanlı masaüstü randevu takip uygulaması",
+  "main": "main.js",
+  "author": "Emirhan Çalık",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmirhanCalik/randevu-sistemi.git"
+  },
+  "keywords": [
+    "electron",
+    "appointment",
+    "scheduler",
+    "randevu",
+    "offline",
+    "desktop"
+  ],
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . \"Randevu Sistemi\" --platform=win32 --arch=ia32 --out=dist --overwrite --icon=icon.ico --asar"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-packager": "^17.1.2",
+    "jimp": "^0.22.12"
+  }
+}
