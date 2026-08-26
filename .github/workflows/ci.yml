@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    name: Syntax and metadata check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check main.js
+
+      - name: Validate package.json
+        run: |
+          node -e "
+            const pkg = require('./package.json');
+            const required = ['name', 'version', 'description', 'main', 'license', 'scripts'];
+            const missing = required.filter(k => !pkg[k]);
+            if (missing.length) throw new Error('package.json missing: ' + missing.join(', '));
+            console.log(pkg.name + '@' + pkg.version + ' ok');
+          "
+
+      - name: Check required files exist
+        run: |
+          for f in index.html style.css app.js main.js logo.png icon.ico LICENSE README.md; do
+            test -f "$f" || { echo "missing: $f"; exit 1; }
+          done
+          echo "all required files present"
+
+      - name: Check the app is free of the original client branding
+        run: |
+          if grep -rniE 'bizim ?berber|bizimberber' --include='*.js' --include='*.html' --include='*.css' --include='*.json' .; then
+            echo "branding leak found"
+            exit 1
+          fi
+          echo "no branding leak"

@@ -11,7 +11,9 @@ Desktop appointment scheduler for small businesses — offline-first, no server,
 [![Electron](https://img.shields.io/badge/Electron-22.3-47848F?logo=electron&logoColor=white)](https://www.electronjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
 [![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)](#kurulum)
+[![CI](https://github.com/EmirhanCalik/randevu-sistemi/actions/workflows/ci.yml/badge.svg)](https://github.com/EmirhanCalik/randevu-sistemi/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/EmirhanCalik/randevu-sistemi?label=indir)](https://github.com/EmirhanCalik/randevu-sistemi/releases/latest)
 
 <img src="docs/screenshot.png" alt="Uygulama ekran görüntüsü" width="760">
 
@@ -46,7 +48,11 @@ Gün, `09:00`–`00:00` arası 16 saatlik slota bölünür. Her slot ya boştur 
 | **Açık/koyu tema** | Tercih `localStorage`'da saklanır, açılışta hatırlanır |
 | **Çevrimdışı** | Veriler tamamen yerelde (`localStorage`), sunucu yok |
 
-### Kurulum
+### Hazır sürümü indir
+
+Kurulum gerektirmez. [Releases](https://github.com/EmirhanCalik/randevu-sistemi/releases/latest) sayfasından `RandevuSistemi-v1.0.0-win32-ia32.zip` dosyasını indirin, klasörü açın ve `Randevu Sistemi.exe` dosyasını çalıştırın.
+
+### Kaynaktan çalıştır
 
 ```bash
 git clone https://github.com/EmirhanCalik/randevu-sistemi.git
